@@ -1,0 +1,69 @@
+GET http://localhost:8050/movies HTTP/1.1
+###
+POST http://localhost:8050/movies HTTP/1.1
+content-type: application/json
+
+{
+    "Name":"hello",
+    "YearPremiered" : "2022" ,
+    "Genres" :["roman","action"],
+    "Image":"https://www.gstatic.com/webp/gallery/1.jpg"
+}
+###
+DELETE  http://localhost:8050/movies/62ea56d9cde36de7c8b497b3 HTTP/1.1
+###
+DELETE  http://localhost:8050/members/62eb98d356d860d6a5f14548 HTTP/1.1
+###
+GET http://localhost:8050/members HTTP/1.1
+###
+POST http://localhost:8050/members HTTP/1.1
+content-type: application/json
+
+{
+    "MemberName":"Michal",
+    "Email":"Michal@gmail.com",
+    "City":"T-A"
+}
+###
+DELETE  http://localhost:8050/subscriptions/62ea56d9cde36de7c8b497ad HTTP/1.1
+###
+GET http://localhost:8050/users HTTP/1.1
+###
+POST http://localhost:8050/users HTTP/1.1
+content-type: application/json
+
+{
+    "fullName":" Dahan",
+    "userName" : "bbb" ,
+    "password" :"123"
+}
+###
+PUT http://localhost:8050/users/62d5bb3bb6db6efc7029a15b HTTP/1.1
+content-type: application/json
+
+{
+    "fullName":"dady",
+    "userName" : "2022" ,
+    "password" :"111111111111"
+}
+###
+POST http://localhost:8050/athentication HTTP/1.1
+content-type: application/json
+
+{
+    "userName":"bbb",
+    "password" :"123"
+}
+###
+GET http://localhost:8050/subscriptions HTTP/1.1
+###
+POST http://localhost:8050/subscriptions HTTP/1.1
+content-type: application/json
+
+{
+    "MovieId":"62e71bee9c4928554740d19c",
+    "MemberId":"62d9d3194eb28dd2034cdc8a",
+    "Date":"25-07-2022"
+}
+###
+GET http://localhost:8050/add/62de77edac1d47b9fdeadc00 HTTP/1.1
