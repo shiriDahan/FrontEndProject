@@ -12,7 +12,7 @@ export default function GetAllMoviesComp() {
     const getAllMovies = async () => {
         if(location.state != null){
             const name = location.state.watche
-            const {data} = await axios.get(`http://localhost:8050/another/${name}`)
+            const {data} = await axios.get(`http://localhost:8050/movies/1/${name}`)
             setMovies([data])
         }
         else{
@@ -22,7 +22,7 @@ export default function GetAllMoviesComp() {
     }
    
     const filterMovies = async (movie) => {
-        let {data}=await axios.delete(`http://localhost:8050/movies/${movie._id}`)
+        let {data}=await axios.delete(`http://localhost:8050/movies/2/${movie._id}`)
         if(data==='deleted 👍'){
         const temp = movies.filter(mv => mv._id !== movie._id)
         setMovies([...temp])

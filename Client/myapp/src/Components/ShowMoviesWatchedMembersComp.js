@@ -16,7 +16,7 @@ export default function ShowMoviesWahtched(props) {
     }
 
     const getMoviesWatched = async (sub) => {
-        const { data } = await axios.get(`http://localhost:8050/movies/${sub.MovieId}`)
+        const { data } = await axios.get(`http://localhost:8050/movies/2/${sub.MovieId}`)
         console.log(data.Name);
         return { "name": data.Name, "date": sub.Date }
     }

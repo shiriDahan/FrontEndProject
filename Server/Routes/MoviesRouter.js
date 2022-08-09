@@ -12,15 +12,26 @@ router.get("/", async (req, res) => {
     }
 })
 
-router.get("/:id", async (req, res) => {
-    let id = req.params.id
-    try {
-        const movie = await moviesBl.getMovieById(id)
-        res.status(200).json(movie)
-    }
-    catch (err) {
-        res.status(500).json({ msg: err })
-    }
+router.get("/:type/:x", async (req, res) => {
+    let type = req.params.type
+    let x = req.params.x
+    if (type == '1')
+        try {
+            const movie = await moviesBl.getMovie('Name', x)
+            res.status(200).json(movie)
+        }
+        catch (err) {
+            res.status(500).json({ msg: err })
+        } else if (type == '2') {
+            try {
+                const movie = await moviesBl.getMovie('_id', x)
+                res.status(200).json(movie)
+            }
+            catch (err) {
+                res.status(500).json({ msg: err })
+            }
+        }
+
 })
 
 router.post("/", async (req, res) => {

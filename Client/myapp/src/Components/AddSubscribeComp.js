@@ -11,7 +11,7 @@ export default function AddSubscriptionComp(props) {
     
 
     const getAllMovies = async () => {
-        let getSubs = await axios.get(`http://localhost:8050/add/${MemberId}`)
+        let getSubs = await axios.get(`http://localhost:8050/subscriptions/1/${MemberId}`)
         let subs = getSubs.data
         let {data} = await axios.get(`http://localhost:8050/movies`)
         subs&&subs.forEach((sub)=>{

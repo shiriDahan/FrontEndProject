@@ -6,7 +6,7 @@ export default function ShowWatched(props) {
     const [watched, setWatched] = useState([])
 
     const getSubscriptions = async () => {
-        let { data } = await axios.get(`http://localhost:8050/subscriptions/${movieId}`)
+        let { data } = await axios.get(`http://localhost:8050/subscriptions/2/${movieId}`)
         const movies = await Promise.all(data.map(sub => getMoviesWatched(sub)))
         setWatched(movies)
     }

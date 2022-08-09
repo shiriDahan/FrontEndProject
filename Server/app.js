@@ -5,7 +5,6 @@ const moviesRouter = require("./Routes/MoviesRouter")
 const membersRouter = require("./Routes/MembersRouter")
 const subscriptionsRouter = require("./Routes/SubsriptionsRouter")
 const athenticationRouter = require("./Routes/AthentucationRouter")
-const anotherRouter = require("./Routes/AnotherRouter")
 const addSubscriptionRouter = require("./Routes/AddSubscriptionRouter")
 
 const app = express()
@@ -20,7 +19,6 @@ app.use("/movies", moviesRouter)
 app.use("/members", membersRouter)
 app.use("/subscriptions", subscriptionsRouter)
 app.use("/athentication", athenticationRouter)
-app.use("/another", anotherRouter)
 app.use("/add", addSubscriptionRouter)
 
 app.listen(8050, () => {

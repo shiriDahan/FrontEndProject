@@ -12,15 +12,27 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.get("/:id", async (req, res) => {
-  const movieId = req.params.id
-  try {
-    const subscriptions = await SubscriptionsBl.getSubscriptionsByMovieId(movieId)
-    res.status(200).json(subscriptions)
+router.get("/:type/:x", async (req, res) => {
+  const type = req.params.type
+  const x = req.params.x
+  if(type=='1'){
+    try {
+      const subscriptions = await SubscriptionsBl.getSubscriptions('MemberId',x)
+      res.status(200).json(subscriptions)
+    }
+    catch (err) {
+      res.status(500).json({ msg: err })
+    }
+  }else if(type=='2'){
+    try {
+      const subscriptions = await SubscriptionsBl.getSubscriptions('MovieId',x)
+      res.status(200).json(subscriptions)
+    }
+    catch (err) {
+      res.status(500).json({ msg: err })
+    }
   }
-  catch (err) {
-    res.status(500).json({ msg: err })
-  }
+  
 })
 
 router.post("/", async (req, res) => {

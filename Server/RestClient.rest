@@ -1,4 +1,4 @@
-GET http://localhost:8050/movies HTTP/1.1
+GET http://localhost:8050/movies/2/62ea56d9cde36de7c8b497be HTTP/1.1
 ###
 POST http://localhost:8050/movies HTTP/1.1
 content-type: application/json
@@ -66,4 +66,4 @@ content-type: application/json
     "Date":"25-07-2022"
 }
 ###
-GET http://localhost:8050/add/62de77edac1d47b9fdeadc00 HTTP/1.1
+GET http://localhost:8050/subscriptions/2/62ea56d9cde36de7c8b497bc HTTP/1.1

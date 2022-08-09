@@ -21,11 +21,10 @@ export default function MoviesComp() {
     }
     const findMovie = async () => {
         console.log(movieName)
-        let {data} = await axios.get(`http://localhost:8050/another/${movieName}` )
+        let {data} = await axios.get(`http://localhost:8050/movies/1/${movieName}` )
         console.log(data)
         setSendMovie(data)
     }
-    
 
     return <div>
         <h3>movies</h3>

@@ -12,33 +12,45 @@ const getAllSubsriptions = async () => {
     }
 }
 
-const getSubscriptionsByMovieId = (movieId) => {
+const getSubscriptions = (type , x) => {
     return new Promise((resolve, reject) => {
-        subscriptionModel.find({ "MovieId": movieId }, (err, data) => {
+        subscriptionModel.find({[type]: x }, (err, data) => {
             if (err) {
                 reject(err)
             } else {
                 resolve(data)
             }
         })
-
     })
 
 }
+// const getSubscriptionsByMovieId = (movieId) => {
+//     return new Promise((resolve, reject) => {
+//         subscriptionModel.find({ "MovieId": movieId }, (err, data) => {
+//             if (err) {
+//                 reject(err)
+//             } else {
+//                 resolve(data)
+//             }
+//         })
 
-const getSubscriptionsByMemberId = (memberId) => {
-    return new Promise((resolve, reject) => {
-        subscriptionModel.find({ MemberId: ObjectId(memberId) }, (err, data) => {
-            if (err) {
-                reject(err)
-            } else {
-                resolve(data)
-            }
-        })
+//     })
 
-    })
+// }
 
-}
+// const getSubscriptionsByMemberId = (memberId) => {
+//     return new Promise((resolve, reject) => {
+//         subscriptionModel.find({ MemberId: ObjectId(memberId) }, (err, data) => {
+//             if (err) {
+//                 reject(err)
+//             } else {
+//                 resolve(data)
+//             }
+//         })
+
+//     })
+
+// }
 
 const createNewSubscription = (obj) => {
     return new Promise((resolve, reject) => {
@@ -97,4 +109,4 @@ const updateSubscriptionById = (id, obj) => {
 }
 
 
-module.exports = { getAllSubsriptions, getSubscriptionsByMemberId, getSubscriptionsByMovieId, createNewSubscription, deleteSubscriptionsByMovieId, deleteSubscriptionsByMemberId, updateSubscriptionById }
+module.exports = { getAllSubsriptions, getSubscriptions, createNewSubscription, deleteSubscriptionsByMovieId, deleteSubscriptionsByMemberId, updateSubscriptionById }

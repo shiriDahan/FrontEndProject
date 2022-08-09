@@ -13,10 +13,11 @@ export default function EditMovie() {
     console.log(movieName)
 
     const getMovieDetails = async () => {
-        const { data } = await axios.get(`http://localhost:8050/another/${movieName}`, movieName)
+        const { data } = await axios.get(`http://localhost:8050/movies/1/${movieName}`)
         console.log(data)
         setMovie(data)
     }
+  
 
     useEffect(() => {
         getMovieDetails()
